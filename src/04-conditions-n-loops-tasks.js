@@ -96,8 +96,8 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  
+function isTriangle(a, b, c) {
+  return a+b > c && a+c > b && c+b > a ? true : false
 }
 
 
@@ -164,8 +164,10 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
  *
  */
-function isInsideCircle(/* circle, point */) {
-  
+function isInsideCircle(circle, point) {
+  const actualX = Math.abs(point['x'] - circle['center']['x'])
+  const actualY = Math.abs(point['y'] - circle['center']['y'])
+  return actualX < circle['radius'] && actualY < circle['radius'] ? true : false;
 }
 
 
@@ -180,8 +182,19 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  
+function findFirstSingleChar(str) {
+  let arr = str.split('')
+  let result
+  for(let i = 0; i<= arr.length; i++){
+    let p = arr.filter(val => {
+      return val == str[i]
+      })
+    if(p.length == 1) {
+      result = p[0]
+      break
+    }
+  }
+  return result ? result : null
 }
 
 
@@ -275,8 +288,25 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(/* ccn */) {
-  
+function isCreditCardNumber(ccn) {
+  let array = String(ccn).split('').map(val => +val)
+  if(array.length %2 == 0) {
+    for(let i=0; i< array.length; i+=2) {
+    array[i] = array[i]*2
+    if(array[i]>9) {
+      array[i] -=9
+      }
+    }
+  } else {
+    for(let i=1; i< array.length; i+=2) {
+      array[i] = array[i]*2
+      if(array[i]>9) {
+        array[i] -=9
+        }
+      }
+  }
+  let sum = array.reduce((acc, val)=> acc+val)
+  return sum%10 == 0 ? true: false
 }
 
 /**
@@ -367,8 +397,20 @@ function toNaryString(/* num, n */) {
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
-function getCommonDirectoryPath(/* pathes */) {
-  
+function getCommonDirectoryPath(pathes) {
+  let arr = []
+  for(let i=0; i<15; i++){
+    let hi = pathes.every(val => {
+      return val[i] == pathes[0][i]})
+    if(hi) {
+      arr.push(pathes[0][i])
+    } else {break}
+  }
+  let result = arr.join('')
+  const index = result.lastIndexOf('/')
+  if(index!= -1) {
+    result = result.slice(0,index+1)}
+  return result ? result: ''
 }
 
 
@@ -425,8 +467,23 @@ function getMatrixProduct(/* m1, m2 */) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  
+function evaluateTicTacToePosition(position) {
+  let winner
+
+  for(let i=0; i<3; i++){
+    if((position[i][0]==position[i][1] && position[i][1] == position[i][2]&& position[i][1] == 'X')|| (position[0][i]==position[1][i] && position[1][i] == position[2][i]&& position[1][i] == 'X')){
+      console.log('l');
+      winner = 'X'
+    } else if ((position[i][0]==position[i][1] && position[i][1] == position[i][2]&& position[i][1]== '0')||(position[0][i]==position[1][i] && position[1][i] == position[2][i]&& position[1][i] == '0')){
+      winner = '0'
+    } 
+  }
+  if ((position[0][0]==position[1][1] && position[1][1] == position[2][2]&& position[1][1] == 'X') || (position[0][2]==position[1][1] && position[1][1] == position[2][0]&& position[1][1] == 'X')){
+    winner = 'X'
+  } else if ((position[0][0]==position[1][1] && position[1][1] == position[2][2]&& position[1][1] == '0') || (position[0][2]==position[1][1] && position[1][1] == position[2][0]&& position[1][1] == '0')){
+    winner = '0'
+  } 
+  return winner == '0'? '0': winner == 'X'? 'X' : undefined
 }
 
 
