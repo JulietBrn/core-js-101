@@ -355,8 +355,26 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  
+function isBracketsBalanced(str) {
+  let newArr = []
+  if(str[0] == ']' || str[0] == '}'|| str[0] == ')'|| str[0] == '>'|| str.length %2 != 0) {
+    console.log(false);
+    return false
+  } else {
+    for(let i=0; i< str.length; i++) {
+      
+      if(str[i] == '[' || str[i] == '('|| str[i] == '{'|| str[i] == '<') {
+        newArr.push(str[i])
+      } else if(str[i] == ')' || str[i] == ']'|| str[i] == '}' || str[i] == '>') {
+        let newArrLength = newArr.length-1
+        let trueOrFalse = (newArr[newArrLength] == '(' && str[i] == ')') || (newArr[newArrLength] == '[' && str[i] == ']')|| (newArr[newArrLength] == '{' && str[i] == '}' )|| (newArr[newArrLength] == '<' && str[i] == '>')
+        if(trueOrFalse) {
+          newArr.pop()
+        }
+      }
+    }
+  }
+  return newArr.length == 0 ? true : false
 }
 
 
@@ -380,8 +398,13 @@ function isBracketsBalanced(/* str */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  
+function toNaryString(num, n) {
+  let array = []
+  while(num !=0) {
+    let rest = num%n //остаток
+    num = Math.trunc(num/n)
+    array.unshift(rest)}
+  return array.join('')
 }
 
 
