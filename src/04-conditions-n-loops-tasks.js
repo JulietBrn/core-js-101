@@ -394,15 +394,15 @@ function isBracketsBalanced(str) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(num, n) {
-  const array = [];
-  let trunkedNum = num;
-  while (num !== 0) {
-    const rest = trunkedNum % n; // остаток
-    trunkedNum = Math.trunc(trunkedNum / n);
-    array.unshift(rest);
-  }
-  return array.join('');
+function toNaryString(/* num, n */) {
+  // const array = [];
+  // let trunkedNum = num;
+  // while (num !== 0) {
+  //   const rest = trunkedNum % n; // остаток
+  //   trunkedNum = Math.trunc(trunkedNum / n);
+  //   array.unshift(rest);
+  // }
+  // return array.join('');
 }
 
 
