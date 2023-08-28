@@ -20,7 +20,6 @@
  */
 function concatenateStrings(value1, value2) {
   return value1.concat('', value2)
-  
 }
 
 
@@ -37,7 +36,6 @@ function concatenateStrings(value1, value2) {
  */
 function getStringLength(value) {
   return value.length
-  
 }
 
 /**
@@ -55,7 +53,6 @@ function getStringLength(value) {
  */
 function getStringFromTemplate(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`
-  
 }
 
 /**
@@ -70,7 +67,6 @@ function getStringFromTemplate(firstName, lastName) {
  */
 function extractNameFromTemplate(value) {
   return value.slice(7).replace('!', '')
-  
 }
 
 
@@ -86,7 +82,6 @@ function extractNameFromTemplate(value) {
  */
 function getFirstChar(value) {
   return value[0]
-  
 }
 
 /**
@@ -102,7 +97,6 @@ function getFirstChar(value) {
  */
 function removeLeadingAndTrailingWhitespaces(value) {
   return value.trim()
-  
 }
 
 /**
@@ -118,7 +112,6 @@ function removeLeadingAndTrailingWhitespaces(value) {
  */
 function repeatString(value, count) {
   return value.repeat(count)
-  
 }
 
 /**
@@ -135,7 +128,6 @@ function repeatString(value, count) {
  */
 function removeFirstOccurrences(str, value) {
   return str.replace(value, '')
-  
 }
 
 /**
@@ -151,7 +143,6 @@ function removeFirstOccurrences(str, value) {
  */
 function unbracketTag(str) {
   return str.slice(1, -1)
-  
 }
 
 
@@ -167,7 +158,6 @@ function unbracketTag(str) {
  */
 function convertToUpperCase(str) {
   return str.toUpperCase()
-  
 }
 
 /**
@@ -187,7 +177,6 @@ function convertToUpperCase(str) {
  */
 function extractEmails(str) {
   return str.split(';')
-  
 }
 
 /**
@@ -265,7 +254,6 @@ function encodeToRot13(str) {
  */
 function isString(value) {
   return Boolean(typeof value == 'string'|| value instanceof String)
-  
 }
 
 

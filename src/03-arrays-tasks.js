@@ -22,7 +22,6 @@
  */
 function findElement(arr, value) {
   return arr.indexOf(value)
-  
 }
 
 /**
@@ -76,7 +75,6 @@ function doubleArray(arr) {
  */
 function getArrayOfPositives(arr) {
   return arr.filter(val => {return val > 0 })
-  
 }
 
 /**
@@ -94,7 +92,6 @@ function getArrayOfStrings(arr) {
     let filteredArr = arr.filter(val => {
     return typeof val == 'string'
   })
-
   return filteredArr
 }
 
@@ -176,7 +173,6 @@ function insertItem(arr, item, index) {
  */
 function getHead(arr, n) {
   return arr.splice(0, n)
-  
 }
 
 
@@ -192,7 +188,6 @@ function getHead(arr, n) {
  */
 function getTail(arr, n) {
   return arr.splice(-n)
-  
 }
 
 
@@ -233,7 +228,6 @@ function toCsvText(arr) {
  */
 function toArrayOfSquares(arr) {
   return arr.map(val => val*val)
-  
 }
 
 
@@ -369,7 +363,6 @@ function sortDigitNamesByNumericOrder(arr) {
  */
 function getItemsSum(arr) {
   return arr.length == 0 ? 0 : arr.reduce((acc, val)=> acc + val)
-  
 }
 
 /**
@@ -591,7 +584,7 @@ function selectMany(arr, childrenSelector) {
 function getElementByIndexes(arr, indexes) {
   for (let i=0; i<indexes.length; i++) {
     arr = arr[indexes[i]]
-  }
+  }//.map
   return arr;
 }
 

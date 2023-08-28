@@ -37,7 +37,6 @@ function getRectangleArea(width, height) {
  */
 function getCircleCircumference(radius) {
   return 2*Math.PI*radius
-  
 }
 
 /**
@@ -54,7 +53,6 @@ function getCircleCircumference(radius) {
  */
 function getAverage(value1, value2) {
   return value1/2+ value2/2
-  
 }
 
 /**
@@ -74,7 +72,6 @@ function getAverage(value1, value2) {
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
   return Math.sqrt((x2-x1)**2 + (y2-y1)**2) 
-  
 }
 
 /**
@@ -91,7 +88,6 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  */
 function getLinearEquationRoot(a, b) {
   return (-b)/a
-  
 }
 
 
@@ -147,7 +143,6 @@ function getLastDigit(value) {
  */
 function parseNumberFromString(value) {
   return +value
-  
 }
 
 /**
@@ -165,7 +160,6 @@ function parseNumberFromString(value) {
  */
 function getParallelepipedDiagonal(a, b, c) {
   return Math.sqrt(a**2 + b**2 + c**2)
-  
 }
 
 
