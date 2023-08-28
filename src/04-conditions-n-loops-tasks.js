@@ -133,7 +133,7 @@ function isTriangle(a, b, c) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-function doRectanglesOverlap(/* rect1, rect2 */) {
+function doRectanglesOverlap(rect1, rect2) {
   
 }
 
@@ -455,7 +455,7 @@ function getCommonDirectoryPath(pathes) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
+function getMatrixProduct(m1, m2) {
   
 }
 
