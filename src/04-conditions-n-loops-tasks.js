@@ -183,8 +183,8 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(str) {
-  const arr = str.split('');
+function findFirstSingleChar(/* str */) {
+/*   const arr = str.split('');
   let result;
   for (let i = 0; i <= arr.length; i += 1) {
     const p = arr.filter((val) => val === str[i]);
@@ -193,7 +193,7 @@ function findFirstSingleChar(str) {
       break;
     }
   }
-  return result || null;
+  return result || null; */
 }
 
 
@@ -290,14 +290,14 @@ function isCreditCardNumber(ccn) {
   const array = String(ccn).split('').map((val) => +val);
   if (array.length % 2 === 0) {
     for (let i = 0; i < array.length; i += 2) {
-      array[i] = array[i] * 2;
+      array[i] *= 2;
       if (array[i] > 9) {
         array[i] -= 9;
       }
     }
   } else {
     for (let i = 1; i < array.length; i += 2) {
-      array[i] = array[i] * 2;
+      array[i] *= 2;
       if (array[i] > 9) {
         array[i] -= 9;
       }
@@ -396,9 +396,10 @@ function isBracketsBalanced(str) {
  */
 function toNaryString(num, n) {
   const array = [];
+  let trunkedNum = num;
   while (num !== 0) {
-    const rest = num % n; // остаток
-    num = Math.trunc(num / n);
+    const rest = trunkedNum % n; // остаток
+    trunkedNum = Math.trunc(trunkedNum / n);
     array.unshift(rest);
   }
   return array.join('');
@@ -487,8 +488,8 @@ function getMatrixProduct(/* m1, m2 */) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(position) {
-  let winner;
+function evaluateTicTacToePosition(/* position */) {
+/*   let winner;
   for (let i = 0; i < 3; i += 1) {
     if ((position[i][0] === position[i][1] && position[i][1] === position[i][2] && position[i][1] === 'X') || (position[0][i] === position[1][i] && position[1][i] === position[2][i] && position[1][i] === 'X')) {
       winner = 'X';
@@ -502,7 +503,7 @@ function evaluateTicTacToePosition(position) {
     winner = '0';
   }
   const res = winner === '0' ? '0' : winner === 'X' ? 'X' : undefined;
-  return res;
+  return res; */
 }
 
 

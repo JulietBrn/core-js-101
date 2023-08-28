@@ -138,7 +138,7 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-  return arr.map((val) => val = val.length);
+  return arr.map((val) => val.length); // val = val.length
 }
 
 /**
@@ -319,10 +319,10 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(arr) {
-  let i = 0;
+function getPositivesCount(/* arr */) {
+  /* let i = 0;
   arr.map((val) => { if (typeof val === 'number' && val > 0) { i += 1; } });
-  return i;
+  return i; */
 }
 
 /**
@@ -338,10 +338,11 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(arr) {
-  const arrL = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  let result = arr.map((val)=> val=arrL.indexOf(val)).sort((a, b) =>a-b).map((val)=>val=arrL[val]);
-  return result;
+function sortDigitNamesByNumericOrder(/* arr */) {
+  // const arrL = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  // let result = arr.map((val) => val = arrL.indexOf(val));
+  // result = result.sort((a, b) => a - b).map((val) => val = arrL[val]);
+  // return result;
 }
 
 /**
@@ -372,10 +373,10 @@ function getItemsSum(arr) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(arr) {
-  let i = 0;
+function getFalsyValuesCount(/* arr */) {
+  /* let i = 0;
   arr.map((val) => { if (!val) { i += 1; } });
-  return i;
+  return i; */
 }
 
 /**
@@ -394,7 +395,7 @@ function getFalsyValuesCount(arr) {
  */
 function findAllOccurrences(arr, item) {
   let i = 0;
-  arr.map((val) => { if (val === item) { i += 1; } });
+  arr.forEach((val) => { if (val === item) { i += 1; } });
   return i;
 }
 
@@ -462,14 +463,14 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(n) {
-  const arr = [];
+function getIdentityMatrix(/* n */) {
+/*   const arr = [];
   const el = '0'.repeat(n).split('').map((val) => val = +val);
   for (let i = 0; i < n; i += 1) {
     arr.push([...el]);
     arr[i][i] = 1;
   }
-  return arr;
+  return arr; */
 }
 
 /**
@@ -577,10 +578,11 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
+  let newArr = [];
   for (let i = 0; i < indexes.length; i += 1) {
-    arr = arr[indexes[i]];
+    newArr = arr[indexes[i]];
   }// .map
-  return arr;
+  return newArr;
 }
 
 

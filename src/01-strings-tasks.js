@@ -233,8 +233,8 @@ function encodeToRot13(str) {
     if (val === ' ' || val === '!' || val === '?') {
       return val;
     }
-    val = abc[abc.indexOf(val) + 13];
-    return val;
+
+    return abc[abc.indexOf(val) + 13];
   });
   return result.join('');
 }
