@@ -134,7 +134,7 @@ function isTriangle(a, b, c) {
  *
  */
 function doRectanglesOverlap(rect1, rect2) {
-  
+  throw new Error('Not implemented')
 }
 
 
@@ -456,7 +456,7 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-  
+  throw new Error('Not implemented')
 }
 
 
