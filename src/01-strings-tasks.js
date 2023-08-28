@@ -19,7 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  return value1.concat('', value2)
+  return value1.concat('', value2);
 }
 
 
@@ -35,7 +35,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  return value.length
+  return value.length;
 }
 
 /**
@@ -52,7 +52,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return `Hello, ${firstName} ${lastName}!`
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -66,7 +66,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.slice(7).replace('!', '')
+  return value.slice(7).replace('!', '');
 }
 
 
@@ -81,7 +81,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-  return value[0]
+  return value[0];
 }
 
 /**
@@ -96,7 +96,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trim()
+  return value.trim();
 }
 
 /**
@@ -111,7 +111,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  return value.repeat(count)
+  return value.repeat(count);
 }
 
 /**
@@ -127,7 +127,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-  return str.replace(value, '')
+  return str.replace(value, '');
 }
 
 /**
@@ -142,7 +142,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.slice(1, -1)
+  return str.slice(1, -1);
 }
 
 
@@ -157,7 +157,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  return str.toUpperCase()
+  return str.toUpperCase();
 }
 
 /**
@@ -176,7 +176,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(';')
+  return str.split(';');
 }
 
 /**
@@ -203,11 +203,11 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  const firstString = `┌${'─'.repeat(width-2)}┐\n`
-  const lastString = `└${'─'.repeat(width-2)}┘\n`
-  const middleString = `│${' '.repeat(width-2)}│\n`
-  const result = firstString+middleString.repeat(height-2)+lastString
-  return result
+  const firstString = `┌${'─'.repeat(width - 2)}┐\n`;
+  const lastString = `└${'─'.repeat(width - 2)}┘\n`;
+  const middleString = `│${' '.repeat(width - 2)}│\n`;
+  const result = firstString + middleString.repeat(height - 2) + lastString;
+  return result;
 }
 
 
@@ -228,14 +228,14 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz".split('')
-  let result = str.split('').map(val => {
-    if(val == ' '|| val =='!' || val == '?') {
-      return val
-    } else {
-    return val = abc[abc.indexOf(val)+13]
+  const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'.split('');
+  const result = str.split('').map((val) => {
+    if (val === ' ' || val === '!' || val === '?') {
+      return val;
     }
-  })
+    val = abc[abc.indexOf(val) + 13];
+    return val;
+  });
   return result.join('');
 }
 
@@ -253,7 +253,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return Boolean(typeof value == 'string'|| value instanceof String)
+  return Boolean(typeof value === 'string' || value instanceof String);
 }
 
 
@@ -282,10 +282,10 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-  let indexArr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
-  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-  'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
-  'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠']
+  const indexArr = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
   return (indexArr.indexOf(value));
 }
 
