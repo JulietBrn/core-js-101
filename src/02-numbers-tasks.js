@@ -203,8 +203,15 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  const result = !!(n === 2 || n === 3 || n === 7 || n === 5 || (n % 2 !== 0 && n % 3 !== 0 && n % 7 !== 0 && n % 5 !== 0));
-  return result;
+  if (n < 2) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**

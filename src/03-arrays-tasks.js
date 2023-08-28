@@ -242,7 +242,7 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   const newArr = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i -= 1) {
     newArr.unshift(arr.slice(0, arr.length).reduce((acc, val) => acc + val));
     arr.pop();
   }
@@ -283,7 +283,7 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(arr) {
+function propagateItemsByPositionIndex(/* arr */) {
   throw new Error('Not implemented');
 }
 
@@ -340,7 +340,7 @@ function getPositivesCount(arr) {
  */
 function sortDigitNamesByNumericOrder(arr) {
   const arrL = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  const result = arr.map((val) => val = arrL.indexOf(val)).sort((a, b) => a - b).map((val) => val = arrL[val]);
+  let result = arr.map((val)=> val=arrL.indexOf(val)).sort((a, b) =>a-b).map((val)=>val=arrL[val]);
   return result;
 }
 
@@ -357,7 +357,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-  return arr.length == 0 ? 0 : arr.reduce((acc, val) => acc + val);
+  return arr.length === 0 ? 0 : arr.reduce((acc, val) => acc + val);
 }
 
 /**
@@ -605,7 +605,9 @@ function getElementByIndexes(arr, indexes) {
 function swapHeadAndTail(arr) {
   const middle = arr.length / 2;
   const middleEl = arr[(arr.length - 1) / 2];
-  const result = arr.length % 2 === 0 ? [...arr.slice(middle, arr.length), ...arr.slice(0, middle)] : [...arr.slice(middle + 0.5, arr.length), middleEl, ...arr.slice(0, middle)];
+  const firstpart = [...arr.slice(middle, arr.length), ...arr.slice(0, middle)];
+  const lastPart = [...arr.slice(middle + 0.5, arr.length), middleEl, ...arr.slice(0, middle)];
+  const result = arr.length % 2 === 0 ? firstpart : lastPart;
   return result;
 }
 

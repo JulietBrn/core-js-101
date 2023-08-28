@@ -73,11 +73,12 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(n1, n2) {
   let i = n1;
+  let p = n1;
   while (i < n2) {
-    n1 += i + 1;
+    p += i + 1;
     i += 1;
   }
-  return n1;
+  return p;
 }
 
 
