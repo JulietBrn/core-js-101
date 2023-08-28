@@ -90,7 +90,7 @@ function getArrayOfPositives(arr) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
+function getArrayOfStrings(arr) {
     let filteredArr = arr.filter(val => {
     return typeof val == 'string'
   })
@@ -332,7 +332,7 @@ function get3TopItems(arr) {
  */
 function getPositivesCount(arr) {
   let i = 0
-  arr.forEach(val => { if(typeof val == 'number' && val >0) { i++}})
+  arr.map(val => { if(typeof val == 'number' && val >0) { i++}})
   return i
 }
 
@@ -386,7 +386,7 @@ function getItemsSum(arr) {
  */
 function getFalsyValuesCount(arr) {
   let i = 0
-  arr.forEach(val => {if(!Boolean(val)) { i++ }})
+  arr.map(val => {if(!Boolean(val)) { i++ }})
   return i
 }
 
@@ -406,7 +406,7 @@ function getFalsyValuesCount(arr) {
  */
 function findAllOccurrences(arr, item) {
   let i = 0;
-  arr.forEach(val => {if(val === item) { i++ }})
+  arr.map(val => {if(val === item) { i++ }})
   return i
 }
 
