@@ -319,10 +319,10 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  /* let i = 0;
-  arr.map((val) => { if (typeof val === 'number' && val > 0) { i += 1; } });
-  return i; */
+function getPositivesCount(arr) {
+  let i = 0;
+  arr.forEach((val) => { if (typeof val === 'number' && val > 0) { i += 1; } });
+  return i;
 }
 
 /**
@@ -339,10 +339,10 @@ function getPositivesCount(/* arr */) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(/* arr */) {
-  // const arrL = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  // let result = arr.map((val) => val = arrL.indexOf(val));
-  // result = result.sort((a, b) => a - b).map((val) => val = arrL[val]);
-  // return result;
+/*   const arrL = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  let result = arr.forEach((val) => val = arrL.indexOf(val));
+  result = result.sort((a, b) => a - b).forEach((val) => val = arrL[val]);
+  return result; */
 }
 
 /**
@@ -373,10 +373,10 @@ function getItemsSum(arr) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  /* let i = 0;
-  arr.map((val) => { if (!val) { i += 1; } });
-  return i; */
+function getFalsyValuesCount(arr) {
+  let i = 0;
+  arr.forEach((val) => { if (!val) { i += 1; } });
+  return i;
 }
 
 /**
@@ -463,14 +463,14 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-/*   const arr = [];
-  const el = '0'.repeat(n).split('').map((val) => val = +val);
+function getIdentityMatrix(n) {
+  const arr = [];
+  const el = '0'.repeat(n).split('').map((val) => +val);
   for (let i = 0; i < n; i += 1) {
     arr.push([...el]);
     arr[i][i] = 1;
   }
-  return arr; */
+  return arr;
 }
 
 /**
@@ -578,11 +578,11 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-  let newArr = [];
+  let el = arr;
   for (let i = 0; i < indexes.length; i += 1) {
-    newArr = arr[indexes[i]];
-  }// .map
-  return newArr;
+    el = el[indexes[i]];
+  }
+  return el;
 }
 
 
